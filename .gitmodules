@@ -1,0 +1,3 @@
+[submodule "Libraries/DelphiAST"]
+	path = Libraries/DelphiAST
+	url = https://github.com/JimMcKeeth/DelphiAST
