@@ -2,7 +2,8 @@
 
 uses
   Vcl.Forms,
-  frmFindProAssignments in 'frmFindProAssignments.pas' {Form32};
+  frmFindProAssignments in 'frmFindProAssignments.pas' {Form32},
+  uFindPropertyAssignment in 'uFindPropertyAssignment.pas';
 
 {$R *.res}
 

@@ -20,7 +20,9 @@ type
     BitBtn1: TBitBtn;
     procedure Button1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    procedure LoadFiles(path: String);
     { Private declarations }
   public
     { Public declarations }
@@ -65,13 +67,31 @@ procedure TForm32.Button1Click(Sender: TObject);
 begin
   if FileOpenDialog1.Execute then
   begin
+    LoadFiles(FileOpenDialog1.FileName);
     CheckListBox1.Clear;
-    for var f in TDirectory.GetFiles(FileOpenDialog1.FileName, '*.pas') do
-    begin
-      CheckListBox1.Items.Add(TPath.GetFileName(f));
-    end;
-    CheckListBox1.CheckAll(cbChecked);
   end;
+end;
+
+procedure TForm32.LoadFiles(path: String);
+begin
+  CheckListBox1.Clear;
+  for var f in TDirectory.GetFiles(Path, '*.pas') do
+  begin
+    CheckListBox1.Items.Add(TPath.GetFileName(f));
+  end;
+  CheckListBox1.CheckAll(cbChecked);
+end;
+
+const samples = '..\..\..\tests\testfiles';
+
+procedure TForm32.FormCreate(Sender: TObject);
+begin
+  if TDirectory.Exists(samples) then
+  begin
+    FileOpenDialog1.FileName := samples;
+    LoadFiles(samples);
+  end;
+
 end;
 
 end.

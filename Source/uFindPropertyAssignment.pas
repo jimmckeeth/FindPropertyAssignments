@@ -15,9 +15,9 @@ type
   public type
     TResult = record
       LineNumber: UInt64;
-      FullName: string;
+      InstanceName: string;
       Value: string;
-      constructor Create(ALineNumber: UInt64; AFullName, AValue: String);
+      constructor Create(ALineNumber: UInt64; AInstanceName, AValue: String);
       function AsString: string;
     end;
     TResults = TArray<TResult>;
@@ -334,14 +334,14 @@ end;
 
 function TFindPropertyAssignment.TResult.AsString: string;
 begin
-  Result := Format('Line # %4d: %s = %s',[self.LineNumber, self.FullName, self.Value])
+  Result := Format('Line # %4d: %s = %s',[self.LineNumber, self.InstanceName, self.Value])
 end;
 
 constructor TFindPropertyAssignment.TResult.Create(ALineNumber: UInt64;
-  AFullName, AValue: String);
+  AInstanceName, AValue: String);
 begin
   LineNumber := ALineNumber;
-  FullName := AFullName;
+  InstanceName := AInstanceName;
   Value := AValue;
 end;
 

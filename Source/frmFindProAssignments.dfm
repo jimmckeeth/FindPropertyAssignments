@@ -6,7 +6,7 @@ object Form32: TForm32
   Margins.Right = 5
   Margins.Bottom = 5
   Caption = 'Form32'
-  ClientHeight = 664
+  ClientHeight = 665
   ClientWidth = 938
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,7 +14,11 @@ object Form32: TForm32
   Font.Height = -18
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
   PixelsPerInch = 144
+  DesignSize = (
+    938
+    665)
   TextHeight = 25
   object Label1: TLabel
     Left = 418
@@ -60,7 +64,8 @@ object Form32: TForm32
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
-    ItemHeight = 26
+    Anchors = [akLeft, akTop, akBottom]
+    ItemHeight = 25
     TabOrder = 1
   end
   object Edit1: TEdit
@@ -96,6 +101,7 @@ object Form32: TForm32
     Margins.Top = 5
     Margins.Right = 5
     Margins.Bottom = 5
+    Anchors = [akLeft, akTop, akRight, akBottom]
     ItemHeight = 25
     TabOrder = 4
   end
@@ -121,7 +127,7 @@ object Form32: TForm32
         FileMask = '*.pas'
       end>
     Options = [fdoPickFolders, fdoPathMustExist]
-    Left = 504
-    Top = 408
+    Left = 648
+    Top = 396
   end
 end
