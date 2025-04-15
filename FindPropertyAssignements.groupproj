@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B6E9C7EC-37A5-46B8-AA23-34C32DA4D9BB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Source\FindPropertyAssignmentsCLI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Source\FindPropertyAssignmentsVCL.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\FindPropertyAssignmentTests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FindPropertyAssignmentsCLI">
+        <MSBuild Projects="Source\FindPropertyAssignmentsCLI.dproj"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentsCLI:Clean">
+        <MSBuild Projects="Source\FindPropertyAssignmentsCLI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentsCLI:Make">
+        <MSBuild Projects="Source\FindPropertyAssignmentsCLI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentsVCL">
+        <MSBuild Projects="Source\FindPropertyAssignmentsVCL.dproj"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentsVCL:Clean">
+        <MSBuild Projects="Source\FindPropertyAssignmentsVCL.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentsVCL:Make">
+        <MSBuild Projects="Source\FindPropertyAssignmentsVCL.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTests">
+        <MSBuild Projects="Tests\FindPropertyAssignmentTests.dproj"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTests:Clean">
+        <MSBuild Projects="Tests\FindPropertyAssignmentTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTests:Make">
+        <MSBuild Projects="Tests\FindPropertyAssignmentTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTestProject">
+        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTestProject:Clean">
+        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FindPropertyAssignmentTestProject:Make">
+        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FindPropertyAssignmentsCLI;FindPropertyAssignmentsVCL;FindPropertyAssignmentTests;FindPropertyAssignmentTestProject"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FindPropertyAssignmentsCLI:Clean;FindPropertyAssignmentsVCL:Clean;FindPropertyAssignmentTests:Clean;FindPropertyAssignmentTestProject:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FindPropertyAssignmentsCLI:Make;FindPropertyAssignmentsVCL:Make;FindPropertyAssignmentTests:Make;FindPropertyAssignmentTestProject:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

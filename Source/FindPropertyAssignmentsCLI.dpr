@@ -1,4 +1,4 @@
-program FindPropertyAssignments;
+program FindPropertyAssignmentsCLI;
 
 {$APPTYPE CONSOLE}
 
@@ -20,7 +20,7 @@ begin
       if Finder.CurrentFileName = '' then
       begin
         Writeln('Please provide path to Delphi source file.');
-        //Finder.CurrentFileName := 'TestFiles\TPanelColorAssignments.pas';
+        Finder.CurrentFileName := '..\Tests\TestFiles\TPanelColorAssignments.pas';
         Exit;
       end;
 

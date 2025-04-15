@@ -13,6 +13,7 @@ type
     Panel2: TPanel;
     Panel3: TPanel;
     Button1: TButton;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -31,6 +32,7 @@ implementation
 
 procedure TForm31.Button1Click(Sender: TObject);
 begin
+
 	for var i := 0 to Pred(ControlCount) do
 	begin
 		if Controls[i] is TPanel then
@@ -43,7 +45,9 @@ end;
 
 procedure TForm31.FormCreate(Sender: TObject);
 begin
-	with Panel2 do
+  Label1.Color := clWhite;
+
+ 	with Panel2 do
 		color := clBlue;
 end;
 

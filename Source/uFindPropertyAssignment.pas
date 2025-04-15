@@ -18,6 +18,7 @@ type
       FullName: string;
       Value: string;
       constructor Create(ALineNumber: UInt64; AFullName, AValue: String);
+      function AsString: string;
     end;
     TResults = TArray<TResult>;
   private
@@ -206,7 +207,8 @@ end;
 
 function TFindPropertyAssignment.GetResults: TResults;
 begin
-  if not FValid then Parse;
+  if not FValid then
+    Parse;
   Result := FResults.ToArray;
 end;
 
@@ -318,6 +320,7 @@ procedure TFindPropertyAssignment.Parse;
 var
   SyntaxTree: TSyntaxNode;
 begin
+  FResults.Clear;
   SyntaxTree := TPasSyntaxTreeBuilder.Run(FCurrentFileName, False);
   try
     ProcessNode(SyntaxTree);
@@ -328,6 +331,11 @@ begin
 end;
 
 { TFindPropertyAssignment.TResult }
+
+function TFindPropertyAssignment.TResult.AsString: string;
+begin
+  Result := Format('Line # %4d: %s = %s',[self.LineNumber, self.FullName, self.Value])
+end;
 
 constructor TFindPropertyAssignment.TResult.Create(ALineNumber: UInt64;
   AFullName, AValue: String);

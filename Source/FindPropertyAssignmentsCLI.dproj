@@ -4,10 +4,10 @@
         <AppType>Console</AppType>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <FrameworkType>None</FrameworkType>
-        <MainSource>FindPropertyAssignments.dpr</MainSource>
+        <MainSource>FindPropertyAssignmentsCLI.dpr</MainSource>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
         <ProjectGuid>{292A79E9-2297-481D-870E-F369F888E735}</ProjectGuid>
-        <ProjectName Condition="'$(ProjectName)'==''">FindPropertyAssignments</ProjectName>
+        <ProjectName Condition="'$(ProjectName)'==''">FindPropertyAssignmentsCLI</ProjectName>
         <ProjectVersion>20.3</ProjectVersion>
         <TargetedPlatforms>693377</TargetedPlatforms>
     </PropertyGroup>
@@ -70,11 +70,11 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <SanitizedProjectName>FindPropertyAssignments</SanitizedProjectName>
+        <SanitizedProjectName>FindPropertyAssignmentsCLI</SanitizedProjectName>
         <DCC_ImageBase>00400000</DCC_ImageBase>
         <DCC_MapFile>3</DCC_MapFile>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_UnitSearchPath>..\..\Source;..\..\Source\SimpleParser;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>..\Libraries\DelphiAST\Source;..\Libraries\DelphiAST\Source\SimpleParser;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
@@ -88,7 +88,7 @@
         <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
         <BT_BuildType>Debug</BT_BuildType>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
-        <Debugger_RunParams>C:\Users\jim\Documents\Embarcadero\Studio\Projects\Unit31.pas</Debugger_RunParams>
+        <Debugger_RunParams>..\..\..\Tests\TestFiles\TPanelColorAssignments.pas</Debugger_RunParams>
         <Manifest_File>(None)</Manifest_File>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
@@ -146,7 +146,7 @@
         <BorlandProject>
             <Delphi.Personality>
                 <Source>
-                    <Source Name="MainSource">FindPropertyAssignments.dpr</Source>
+                    <Source Name="MainSource">FindPropertyAssignmentsCLI.dpr</Source>
                 </Source>
                 <Excluded_Packages/>
             </Delphi.Personality>
