@@ -44,6 +44,7 @@ type
     procedure SetTargetPropertyName(const Value: string);
     function GetResults: TResults;
     function GetFullName(Node: TSyntaxNode): string;
+    function DetermineInstanceType(const Name: string): string;
   public
     property TargetClassName: string read FTargetClassName write SetTargetClassName;
     property TargetPropertyName: string read FTargetPropertyName write SetTargetPropertyName;
@@ -231,6 +232,26 @@ begin
   end;
 end;
 
+function TFindPropertyAssignment.DetermineInstanceType(const Name: string): string;
+var
+  ParenPos: Integer;
+begin
+  Result := '';
+  ParenPos := Pos('(', Name);
+  if ParenPos > 0 then
+    // Extract type from type cast like 'TPanel(someControl)'
+    Result := Copy(Name, 1, ParenPos - 1)
+  else if FContextStack.Count > 0 then
+    // Use type from context if in a with statement
+    Result := FTargetClassName
+  else if Pos('.', Name) > 0 then
+    // Use target class for qualified names like 'Panel1.Color'
+    Result := FTargetClassName;
+
+  if Result = '' then
+    Result := FTargetClassName; // Default fallback
+end;
+
 procedure TFindPropertyAssignment.HandleAssignment(Node: TSyntaxNode);
 var
   LHS, RHS: TSyntaxNode;
@@ -265,8 +286,15 @@ begin
       // Get the full name otherwise
       FullName := GetFullName(LHS);
     end;
-    FResults.Add(TResult.Create(Node.Line, FullName, Value));
-    FResults.Add(TResult.Create(Node.Line, FullName, InstanceType, Value));
+
+    InstanceType := DetermineInstanceType(FullName);
+
+    // Only add to results if both class name and property name match
+    if (SameText(FTargetClassName, InstanceType)) and
+       (Pos(FTargetPropertyName, FullName) > 0) then
+    begin
+      FResults.Add(TResult.Create(Node.Line, FullName, InstanceType, Value));
+    end;
   end;
 end;
 
