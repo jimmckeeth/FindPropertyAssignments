@@ -23,6 +23,7 @@ type
     procedure FormCreate(Sender: TObject);
   private
     procedure LoadFiles(path: String);
+    procedure ProcessSelected;
     { Private declarations }
   public
     { Public declarations }
@@ -38,6 +39,11 @@ implementation
 uses uFindPropertyAssignment, IOUtils;
 
 procedure TForm32.BitBtn1Click(Sender: TObject);
+begin
+  ProcessSelected();
+end;
+
+procedure TForm32.ProcessSelected();
 begin
   var finder := TFindPropertyAssignment.Create;
   try
@@ -56,7 +62,6 @@ begin
           ListBox1.Items.add(res.AsString);
         end;
       end;
-
     end;
   finally
     finder.Free;
@@ -90,6 +95,7 @@ begin
   begin
     FileOpenDialog1.FileName := samples;
     LoadFiles(samples);
+    ProcessSelected();
   end;
 
 end;

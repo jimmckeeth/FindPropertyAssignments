@@ -16,8 +16,9 @@ type
     TResult = record
       LineNumber: UInt64;
       InstanceName: string;
+      InstanceType: string; // <-- Added
       Value: string;
-      constructor Create(ALineNumber: UInt64; AInstanceName, AValue: String);
+      constructor Create(ALineNumber: UInt64; AInstanceName, AInstanceType, AValue: String);
       function AsString: string;
     end;
     TResults = TArray<TResult>;
@@ -233,7 +234,7 @@ end;
 procedure TFindPropertyAssignment.HandleAssignment(Node: TSyntaxNode);
 var
   LHS, RHS: TSyntaxNode;
-  FullName, Value: string;
+  FullName, Value, InstanceType: string;
 begin
   LHS := Node.FindNode([ntLHS]);
   RHS := Node.FindNode([ntRHS]);
@@ -265,6 +266,7 @@ begin
       FullName := GetFullName(LHS);
     end;
     FResults.Add(TResult.Create(Node.Line, FullName, Value));
+    FResults.Add(TResult.Create(Node.Line, FullName, InstanceType, Value));
   end;
 end;
 
@@ -334,14 +336,15 @@ end;
 
 function TFindPropertyAssignment.TResult.AsString: string;
 begin
-  Result := Format('Line # %4d: %s = %s',[self.LineNumber, self.InstanceName, self.Value])
+  Result := Format('Line # %4d: %s (%s) = %s', [self.LineNumber, self.InstanceName, self.InstanceType, self.Value]);
 end;
 
 constructor TFindPropertyAssignment.TResult.Create(ALineNumber: UInt64;
-  AInstanceName, AValue: String);
+  AInstanceName, AInstanceType, AValue: String);
 begin
   LineNumber := ALineNumber;
   InstanceName := AInstanceName;
+  InstanceType := AInstanceType;
   Value := AValue;
 end;
 
