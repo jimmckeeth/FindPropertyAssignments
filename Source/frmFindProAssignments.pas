@@ -59,7 +59,7 @@ begin
         ListBox1.Items.Add(fullName);
         for var res in finder.Results do
         begin
-          ListBox1.Items.add(res.AsString);
+          ListBox1.Items.add(res.ToString);
         end;
       end;
     end;

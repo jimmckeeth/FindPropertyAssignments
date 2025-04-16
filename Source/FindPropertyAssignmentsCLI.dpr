@@ -32,7 +32,7 @@ begin
 
       for var ass in Finder.Results do
       begin
-        Writeln(Format('Line # %4d: %s = %s',[ass.LineNumber, ass.FullName, ass.Value]));
+        Writeln(ass.ToString);
       end;
 
     finally

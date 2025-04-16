@@ -19,7 +19,7 @@ type
       InstanceType: string;
       Value: string;
       constructor Create(ALineNumber: UInt64; AInstanceName, AInstanceType, AValue: String);
-      function AsString: string;
+      function ToString: string;
     end;
     TResults = TArray<TResult>;
   private
@@ -60,7 +60,7 @@ implementation
 function TFindPropertyAssignment.GetFullName(Node: TSyntaxNode): string;
 var
   j: Integer;
-  ParentNode, TypeNode, IndexNode: TSyntaxNode;
+  TypeNode, IndexNode: TSyntaxNode;
 begin
   Result := '';
   if Node = nil then
@@ -254,7 +254,7 @@ end;
 
 procedure TFindPropertyAssignment.HandleAssignment(Node: TSyntaxNode);
 var
-  LHS, RHS: TSyntaxNode;
+  IdNode, ExprNode, LHS, RHS: TSyntaxNode;
   FullName, Value, InstanceType: string;
 begin
   LHS := Node.FindNode([ntLHS]);
@@ -265,10 +265,10 @@ begin
     Value := '';
     if RHS.HasChildren then
     begin
-      var ExprNode := RHS.ChildNodes[0];  // Get EXPRESSION node
+       ExprNode := RHS.ChildNodes[0];  // Get EXPRESSION node
       if ExprNode.HasChildren then
       begin
-        var IdNode := ExprNode.ChildNodes[0];  // Get IDENTIFIER node
+        IdNode := ExprNode.ChildNodes[0];  // Get IDENTIFIER node
         if IdNode.Typ = ntIdentifier then
           Value := IdNode.GetAttribute(anName);
         if IdNode.Typ = ntLiteral then
@@ -365,7 +365,7 @@ end;
 
 { TFindPropertyAssignment.TResult }
 
-function TFindPropertyAssignment.TResult.AsString: string;
+function TFindPropertyAssignment.TResult.ToString: string;
 begin
   Result := Format('Line # %4d: %s (%s) = %s', [self.LineNumber, self.InstanceName, self.InstanceType, self.Value]);
 end;
