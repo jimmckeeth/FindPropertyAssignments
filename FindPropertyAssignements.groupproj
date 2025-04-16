@@ -12,9 +12,6 @@
         <Projects Include="Tests\FindPropertyAssignmentTests.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -50,23 +47,14 @@
     <Target Name="FindPropertyAssignmentTests:Make">
         <MSBuild Projects="Tests\FindPropertyAssignmentTests.dproj" Targets="Make"/>
     </Target>
-    <Target Name="FindPropertyAssignmentTestProject">
-        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj"/>
-    </Target>
-    <Target Name="FindPropertyAssignmentTestProject:Clean">
-        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="FindPropertyAssignmentTestProject:Make">
-        <MSBuild Projects="Tests\TestFiles\FindPropertyAssignmentTestProject.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="FindPropertyAssignmentsCLI;FindPropertyAssignmentsVCL;FindPropertyAssignmentTests;FindPropertyAssignmentTestProject"/>
+        <CallTarget Targets="FindPropertyAssignmentsCLI;FindPropertyAssignmentsVCL;FindPropertyAssignmentTests"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="FindPropertyAssignmentsCLI:Clean;FindPropertyAssignmentsVCL:Clean;FindPropertyAssignmentTests:Clean;FindPropertyAssignmentTestProject:Clean"/>
+        <CallTarget Targets="FindPropertyAssignmentsCLI:Clean;FindPropertyAssignmentsVCL:Clean;FindPropertyAssignmentTests:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="FindPropertyAssignmentsCLI:Make;FindPropertyAssignmentsVCL:Make;FindPropertyAssignmentTests:Make;FindPropertyAssignmentTestProject:Make"/>
+        <CallTarget Targets="FindPropertyAssignmentsCLI:Make;FindPropertyAssignmentsVCL:Make;FindPropertyAssignmentTests:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
