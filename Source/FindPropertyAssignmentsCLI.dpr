@@ -9,6 +9,7 @@ uses
 
 var
   Finder: TFindPropertyAssignment;
+  assignment: TFindPropertyAssignment.TResult;
 begin
   try
     Finder := TFindPropertyAssignment.Create('TPanel','Color');
@@ -30,9 +31,9 @@ begin
         Exit;
       end;
 
-      for var ass in Finder.Results do
+      for assignment in Finder.Results do
       begin
-        Writeln(ass.ToString);
+        Writeln(assignment.ToString);
       end;
 
     finally

@@ -44,20 +44,25 @@ begin
 end;
 
 procedure TForm32.ProcessSelected();
+var
+  i: Integer;
+  relativeName, FullName: String;
+  res: TFindPropertyAssignment.TResult;
+  finder: TFindPropertyAssignment;
 begin
-  var finder := TFindPropertyAssignment.Create;
+  finder := TFindPropertyAssignment.Create;
   try
     finder.TargetClassName := Edit1.Text;
     finder.TargetPropertyName := Edit2.Text;
-    for var i := 0 to pred(CheckListBox1.Count) do
+    for i := 0 to pred(CheckListBox1.Count) do
     begin
       if CheckListBox1.Checked[i] then
       begin
-        var relativeName := CheckListBox1.Items[i];
-        var fullName := TPath.Combine(FileOpenDialog1.FileName, relativeName);
+        relativeName := CheckListBox1.Items[i];
+        fullName := TPath.Combine(FileOpenDialog1.FileName, relativeName);
         finder.CurrentFileName := fullname;
         ListBox1.Items.Add(fullName);
-        for var res in finder.Results do
+        for res in finder.Results do
         begin
           ListBox1.Items.add(res.ToString);
         end;
@@ -78,9 +83,11 @@ begin
 end;
 
 procedure TForm32.LoadFiles(path: String);
+var
+  f: String;
 begin
   CheckListBox1.Clear;
-  for var f in TDirectory.GetFiles(Path, '*.pas') do
+  for f in TDirectory.GetFiles(Path, '*.pas') do
   begin
     CheckListBox1.Items.Add(TPath.GetFileName(f));
   end;
