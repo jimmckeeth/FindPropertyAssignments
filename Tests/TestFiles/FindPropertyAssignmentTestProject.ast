@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<UNIT line="1" col="1" name="FindPropertyAssignmentTestProject">
+  <USES begin_line="3" begin_col="1" end_line="12" end_col="1">
+    <UNIT line="4" col="3" name="Vcl.Forms"/>
+    <UNIT line="5" col="3" name="TPanelColorAssignments" path="TPanelColorAssignments.pas"/>
+    <UNIT line="6" col="3" name="WithSample" path="WithSample.pas"/>
+    <UNIT line="7" col="3" name="FakeRecordPanel" path="FakeRecordPanel.pas"/>
+    <UNIT line="8" col="3" name="SimilarNames" path="SimilarNames.pas"/>
+  </USES>
+  <STATEMENTS begin_line="12" begin_col="1" end_line="17" end_col="4">
+    <CALL line="13" col="3">
+      <DOT line="13" col="14">
+        <IDENTIFIER line="13" col="3" name="Application"/>
+        <IDENTIFIER line="13" col="15" name="Initialize"/>
+      </DOT>
+    </CALL>
+    <ASSIGN line="14" col="3">
+      <LHS line="14" col="3">
+        <DOT line="14" col="14">
+          <IDENTIFIER line="14" col="3" name="Application"/>
+          <IDENTIFIER line="14" col="15" name="MainFormOnTaskbar"/>
+        </DOT>
+      </LHS>
+      <RHS line="14" col="36">
+        <EXPRESSION line="14" col="36">
+          <IDENTIFIER line="14" col="36" name="True"/>
+        </EXPRESSION>
+      </RHS>
+    </ASSIGN>
+    <CALL line="15" col="3">
+      <CALL line="15" col="3">
+        <DOT line="15" col="14">
+          <IDENTIFIER line="15" col="3" name="Application"/>
+          <IDENTIFIER line="15" col="15" name="CreateForm"/>
+        </DOT>
+        <EXPRESSIONS line="15" col="26">
+          <EXPRESSION line="15" col="26">
+            <IDENTIFIER line="15" col="26" name="TForm31"/>
+          </EXPRESSION>
+          <EXPRESSION line="15" col="35">
+            <IDENTIFIER line="15" col="35" name="Form31"/>
+          </EXPRESSION>
+        </EXPRESSIONS>
+      </CALL>
+    </CALL>
+    <CALL line="16" col="3">
+      <DOT line="16" col="14">
+        <IDENTIFIER line="16" col="3" name="Application"/>
+        <IDENTIFIER line="16" col="15" name="Run"/>
+      </DOT>
+    </CALL>
+  </STATEMENTS>
+</UNIT>

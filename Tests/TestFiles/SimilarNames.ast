@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<UNIT line="1" col="1" name="SimilarNames">
+  <INTERFACE begin_line="3" begin_col="1" end_line="22" end_col="1">
+    <TYPESECTION line="5" col="1">
+      <TYPEDECL begin_line="6" begin_col="3" end_line="9" end_col="6" name="TPanelIsh">
+        <TYPE line="6" col="15" type="class">
+          <FIELD line="7" col="5">
+            <NAME line="7" col="5" value="color"/>
+            <TYPE line="7" col="12" name="Integer"/>
+          </FIELD>
+          <FIELD line="8" col="5">
+            <NAME line="8" col="5" value="other"/>
+            <TYPE line="8" col="12" name="String"/>
+          </FIELD>
+        </TYPE>
+      </TYPEDECL>
+      <TYPEDECL begin_line="11" begin_col="3" end_line="14" end_col="6" name="TAlmostPanel">
+        <TYPE line="11" col="18" type="class">
+          <FIELD line="12" col="5">
+            <NAME line="12" col="5" value="color"/>
+            <TYPE line="12" col="12" name="Integer"/>
+          </FIELD>
+          <FIELD line="13" col="5">
+            <NAME line="13" col="5" value="nope"/>
+            <TYPE line="13" col="11" name="String"/>
+          </FIELD>
+        </TYPE>
+      </TYPEDECL>
+      <TYPEDECL begin_line="16" begin_col="3" end_line="20" end_col="6" name="TPanel">
+        <TYPE line="16" col="12" type="class">
+          <FIELD line="17" col="5">
+            <NAME line="17" col="5" value="colorish"/>
+            <TYPE line="17" col="15" name="Integer"/>
+          </FIELD>
+          <FIELD line="18" col="5">
+            <NAME line="18" col="5" value="almostColor"/>
+            <TYPE line="18" col="18" name="Integer"/>
+          </FIELD>
+          <FIELD line="19" col="5">
+            <NAME line="19" col="5" value="maybe"/>
+            <TYPE line="19" col="12" name="String"/>
+          </FIELD>
+        </TYPE>
+      </TYPEDECL>
+    </TYPESECTION>
+  </INTERFACE>
+  <IMPLEMENTATION begin_line="22" begin_col="1" end_line="24" end_col="1"/>
+  <STATEMENTS begin_line="24" begin_col="1" end_line="47" end_col="4">
+    <VARIABLES line="25" col="3">
+      <VARIABLE line="25" col="7">
+        <NAME line="25" col="7" value="p1"/>
+      </VARIABLE>
+      <ASSIGN line="0" col="0">
+        <EXPRESSION line="25" col="13">
+          <DOT line="25" col="22">
+            <IDENTIFIER line="25" col="13" name="TPanelIsh"/>
+            <IDENTIFIER line="25" col="23" name="Create"/>
+          </DOT>
+        </EXPRESSION>
+      </ASSIGN>
+    </VARIABLES>
+    <TRY line="26" col="3">
+      <STATEMENTS begin_line="27" begin_col="5" end_line="29" end_col="3">
+        <ASSIGN line="27" col="5">
+          <LHS line="27" col="5">
+            <DOT line="27" col="7">
+              <IDENTIFIER line="27" col="5" name="p1"/>
+              <IDENTIFIER line="27" col="8" name="color"/>
+            </DOT>
+          </LHS>
+          <RHS line="27" col="17">
+            <EXPRESSION line="27" col="17">
+              <LITERAL line="27" col="17" value="1" type="numeric"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+        <ASSIGN line="28" col="5">
+          <LHS line="28" col="5">
+            <DOT line="28" col="7">
+              <IDENTIFIER line="28" col="5" name="p1"/>
+              <IDENTIFIER line="28" col="8" name="other"/>
+            </DOT>
+          </LHS>
+          <RHS line="28" col="17">
+            <EXPRESSION line="28" col="17">
+              <LITERAL line="28" col="24" value="other" type="string"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+      </STATEMENTS>
+      <FINALLY line="30" col="5">
+        <STATEMENTS begin_line="30" begin_col="5" end_line="31" end_col="3">
+          <CALL line="30" col="5">
+            <DOT line="30" col="7">
+              <IDENTIFIER line="30" col="5" name="p1"/>
+              <IDENTIFIER line="30" col="8" name="Free"/>
+            </DOT>
+          </CALL>
+        </STATEMENTS>
+      </FINALLY>
+    </TRY>
+    <VARIABLES line="32" col="3">
+      <VARIABLE line="32" col="7">
+        <NAME line="32" col="7" value="p2"/>
+      </VARIABLE>
+      <ASSIGN line="0" col="0">
+        <EXPRESSION line="32" col="13">
+          <DOT line="32" col="25">
+            <IDENTIFIER line="32" col="13" name="TAlmostPanel"/>
+            <IDENTIFIER line="32" col="26" name="Create"/>
+          </DOT>
+        </EXPRESSION>
+      </ASSIGN>
+    </VARIABLES>
+    <TRY line="33" col="3">
+      <STATEMENTS begin_line="34" begin_col="5" end_line="36" end_col="3">
+        <ASSIGN line="34" col="5">
+          <LHS line="34" col="5">
+            <DOT line="34" col="7">
+              <IDENTIFIER line="34" col="5" name="p2"/>
+              <IDENTIFIER line="34" col="8" name="color"/>
+            </DOT>
+          </LHS>
+          <RHS line="34" col="17">
+            <EXPRESSION line="34" col="17">
+              <LITERAL line="34" col="17" value="1" type="numeric"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+        <ASSIGN line="35" col="5">
+          <LHS line="35" col="5">
+            <DOT line="35" col="7">
+              <IDENTIFIER line="35" col="5" name="p2"/>
+              <IDENTIFIER line="35" col="8" name="nope"/>
+            </DOT>
+          </LHS>
+          <RHS line="35" col="16">
+            <EXPRESSION line="35" col="16">
+              <LITERAL line="35" col="22" value="nope" type="string"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+      </STATEMENTS>
+      <FINALLY line="37" col="5">
+        <STATEMENTS begin_line="37" begin_col="5" end_line="38" end_col="3">
+          <CALL line="37" col="5">
+            <DOT line="37" col="7">
+              <IDENTIFIER line="37" col="5" name="p2"/>
+              <IDENTIFIER line="37" col="8" name="Free"/>
+            </DOT>
+          </CALL>
+        </STATEMENTS>
+      </FINALLY>
+    </TRY>
+    <VARIABLES line="39" col="3">
+      <VARIABLE line="39" col="7">
+        <NAME line="39" col="7" value="p3"/>
+      </VARIABLE>
+      <ASSIGN line="0" col="0">
+        <EXPRESSION line="39" col="13">
+          <DOT line="39" col="19">
+            <IDENTIFIER line="39" col="13" name="TPanel"/>
+            <IDENTIFIER line="39" col="20" name="Create"/>
+          </DOT>
+        </EXPRESSION>
+      </ASSIGN>
+    </VARIABLES>
+    <TRY line="40" col="3">
+      <STATEMENTS begin_line="41" begin_col="5" end_line="44" end_col="3">
+        <ASSIGN line="41" col="5">
+          <LHS line="41" col="5">
+            <DOT line="41" col="7">
+              <IDENTIFIER line="41" col="5" name="p3"/>
+              <IDENTIFIER line="41" col="8" name="colorish"/>
+            </DOT>
+          </LHS>
+          <RHS line="41" col="20">
+            <EXPRESSION line="41" col="20">
+              <LITERAL line="41" col="20" value="1" type="numeric"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+        <ASSIGN line="42" col="5">
+          <LHS line="42" col="5">
+            <DOT line="42" col="7">
+              <IDENTIFIER line="42" col="5" name="p3"/>
+              <IDENTIFIER line="42" col="8" name="almostColor"/>
+            </DOT>
+          </LHS>
+          <RHS line="42" col="23">
+            <EXPRESSION line="42" col="23">
+              <LITERAL line="42" col="23" value="2" type="numeric"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+        <ASSIGN line="43" col="5">
+          <LHS line="43" col="5">
+            <DOT line="43" col="7">
+              <IDENTIFIER line="43" col="5" name="p3"/>
+              <IDENTIFIER line="43" col="8" name="maybe"/>
+            </DOT>
+          </LHS>
+          <RHS line="43" col="17">
+            <EXPRESSION line="43" col="17">
+              <LITERAL line="43" col="24" value="maybe" type="string"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+      </STATEMENTS>
+      <FINALLY line="45" col="5">
+        <STATEMENTS begin_line="45" begin_col="5" end_line="46" end_col="3">
+          <CALL line="45" col="5">
+            <DOT line="45" col="7">
+              <IDENTIFIER line="45" col="5" name="p3"/>
+              <IDENTIFIER line="45" col="8" name="Free"/>
+            </DOT>
+          </CALL>
+        </STATEMENTS>
+      </FINALLY>
+    </TRY>
+  </STATEMENTS>
+</UNIT>

@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<UNIT line="1" col="1" name="WithSample">
+  <INTERFACE begin_line="3" begin_col="1" end_line="21" end_col="1">
+    <USES begin_line="5" begin_col="1" end_line="9" end_col="1">
+      <UNIT line="6" col="3" name="Vcl.ExtCtrls"/>
+      <UNIT line="7" col="3" name="Vcl.Graphics"/>
+    </USES>
+    <TYPESECTION line="9" col="1">
+      <TYPEDECL begin_line="10" begin_col="3" end_line="16" end_col="6" name="THolder">
+        <TYPE line="10" col="13" type="class">
+          <TYPE line="10" col="19" name="TObject"/>
+          <PUBLIC line="11" col="3" visibility="true">
+            <FIELD line="12" col="5">
+              <NAME line="12" col="5" value="panel1"/>
+              <TYPE line="12" col="13" name="TPanel"/>
+            </FIELD>
+            <METHOD begin_line="13" begin_col="5" end_line="14" end_col="3" kind="constructor" name="Create"/>
+          </PUBLIC>
+          <PROTECTED line="14" col="3" visibility="true">
+            <METHOD begin_line="15" begin_col="5" end_line="16" end_col="3" kind="destructor" name="Destroy" methodbinding="override"/>
+          </PROTECTED>
+        </TYPE>
+      </TYPEDECL>
+      <TYPEDECL begin_line="17" begin_col="3" end_line="19" end_col="6" name="TRecord">
+        <TYPE line="17" col="13" type="record">
+          <FIELD line="18" col="5">
+            <NAME line="18" col="5" value="panel4"/>
+            <TYPE line="18" col="13" name="TPanel"/>
+          </FIELD>
+        </TYPE>
+      </TYPEDECL>
+    </TYPESECTION>
+  </INTERFACE>
+  <IMPLEMENTATION begin_line="21" begin_col="1" end_line="36" end_col="1">
+    <METHOD begin_line="25" begin_col="1" end_line="30" end_col="1" name="THolder.Create" kind="constructor">
+      <STATEMENTS begin_line="26" begin_col="1" end_line="28" end_col="4">
+        <ASSIGN line="27" col="3">
+          <LHS line="27" col="3">
+            <IDENTIFIER line="27" col="3" name="panel1"/>
+          </LHS>
+          <RHS line="27" col="13">
+            <EXPRESSION line="27" col="13">
+              <CALL line="27" col="13">
+                <DOT line="27" col="19">
+                  <IDENTIFIER line="27" col="13" name="TPanel"/>
+                  <IDENTIFIER line="27" col="20" name="Create"/>
+                </DOT>
+                <EXPRESSIONS line="27" col="27">
+                  <EXPRESSION line="27" col="27">
+                    <LITERAL line="27" col="27" type="nil"/>
+                  </EXPRESSION>
+                </EXPRESSIONS>
+              </CALL>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+      </STATEMENTS>
+    </METHOD>
+    <METHOD begin_line="30" begin_col="1" end_line="36" end_col="1" name="THolder.Destroy" kind="destructor">
+      <STATEMENTS begin_line="31" begin_col="1" end_line="34" end_col="4">
+        <CALL line="32" col="3">
+          <DOT line="32" col="9">
+            <IDENTIFIER line="32" col="3" name="panel1"/>
+            <IDENTIFIER line="32" col="10" name="Free"/>
+          </DOT>
+        </CALL>
+        <INHERITED line="33" col="3"/>
+      </STATEMENTS>
+    </METHOD>
+  </IMPLEMENTATION>
+  <STATEMENTS begin_line="36" begin_col="1" end_line="67" end_col="4">
+    <VARIABLES line="37" col="3">
+      <VARIABLE line="37" col="7">
+        <NAME line="37" col="7" value="r"/>
+        <TYPE line="37" col="10" name="TRecord"/>
+      </VARIABLE>
+    </VARIABLES>
+    <ASSIGN line="38" col="3">
+      <LHS line="38" col="3">
+        <DOT line="38" col="4">
+          <IDENTIFIER line="38" col="3" name="r"/>
+          <IDENTIFIER line="38" col="5" name="panel4"/>
+        </DOT>
+      </LHS>
+      <RHS line="38" col="15">
+        <EXPRESSION line="38" col="15">
+          <CALL line="38" col="15">
+            <DOT line="38" col="21">
+              <IDENTIFIER line="38" col="15" name="TPanel"/>
+              <IDENTIFIER line="38" col="22" name="Create"/>
+            </DOT>
+            <EXPRESSIONS line="38" col="29">
+              <EXPRESSION line="38" col="29">
+                <LITERAL line="38" col="29" type="nil"/>
+              </EXPRESSION>
+            </EXPRESSIONS>
+          </CALL>
+        </EXPRESSION>
+      </RHS>
+    </ASSIGN>
+    <TRY line="39" col="3">
+      <STATEMENTS begin_line="40" begin_col="5" end_line="41" end_col="3">
+        <ASSIGN line="40" col="5">
+          <LHS line="40" col="5">
+            <DOT line="40" col="6">
+              <IDENTIFIER line="40" col="5" name="r"/>
+              <DOT line="40" col="13">
+                <IDENTIFIER line="40" col="7" name="panel4"/>
+                <IDENTIFIER line="40" col="14" name="Color"/>
+              </DOT>
+            </DOT>
+          </LHS>
+          <RHS line="40" col="23">
+            <EXPRESSION line="40" col="23">
+              <IDENTIFIER line="40" col="23" name="clYellow"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+      </STATEMENTS>
+      <FINALLY line="42" col="5">
+        <STATEMENTS begin_line="42" begin_col="5" end_line="43" end_col="3">
+          <CALL line="42" col="5">
+            <DOT line="42" col="6">
+              <IDENTIFIER line="42" col="5" name="r"/>
+              <DOT line="42" col="13">
+                <IDENTIFIER line="42" col="7" name="panel4"/>
+                <IDENTIFIER line="42" col="14" name="Free"/>
+              </DOT>
+            </DOT>
+          </CALL>
+        </STATEMENTS>
+      </FINALLY>
+    </TRY>
+    <WITH line="45" col="3">
+      <EXPRESSIONS line="45" col="8">
+        <EXPRESSION line="45" col="8">
+          <DOT line="45" col="15">
+            <IDENTIFIER line="45" col="8" name="THolder"/>
+            <IDENTIFIER line="45" col="16" name="Create"/>
+          </DOT>
+        </EXPRESSION>
+      </EXPRESSIONS>
+      <STATEMENTS begin_line="46" begin_col="3" end_line="50" end_col="6">
+        <WITH line="47" col="5">
+          <EXPRESSIONS line="47" col="10">
+            <EXPRESSION line="47" col="10">
+              <IDENTIFIER line="47" col="10" name="panel1"/>
+            </EXPRESSION>
+          </EXPRESSIONS>
+          <ASSIGN line="48" col="7">
+            <LHS line="48" col="7">
+              <IDENTIFIER line="48" col="7" name="Color"/>
+            </LHS>
+            <RHS line="48" col="16">
+              <EXPRESSION line="48" col="16">
+                <IDENTIFIER line="48" col="16" name="clFuchsia"/>
+              </EXPRESSION>
+            </RHS>
+          </ASSIGN>
+        </WITH>
+        <CALL line="49" col="5">
+          <IDENTIFIER line="49" col="5" name="Free"/>
+        </CALL>
+      </STATEMENTS>
+    </WITH>
+    <VARIABLES line="52" col="3">
+      <VARIABLE line="52" col="7">
+        <NAME line="52" col="7" value="Panel2"/>
+      </VARIABLE>
+      <ASSIGN line="0" col="0">
+        <EXPRESSION line="52" col="17">
+          <CALL line="52" col="17">
+            <DOT line="52" col="23">
+              <IDENTIFIER line="52" col="17" name="TPanel"/>
+              <IDENTIFIER line="52" col="24" name="Create"/>
+            </DOT>
+            <EXPRESSIONS line="52" col="31">
+              <EXPRESSION line="52" col="31">
+                <LITERAL line="52" col="31" type="nil"/>
+              </EXPRESSION>
+            </EXPRESSIONS>
+          </CALL>
+        </EXPRESSION>
+      </ASSIGN>
+    </VARIABLES>
+    <TRY line="53" col="3">
+      <STATEMENTS begin_line="54" begin_col="5" end_line="56" end_col="3">
+        <WITH line="54" col="5">
+          <EXPRESSIONS line="54" col="10">
+            <EXPRESSION line="54" col="10">
+              <IDENTIFIER line="54" col="10" name="Panel2"/>
+            </EXPRESSION>
+          </EXPRESSIONS>
+          <ASSIGN line="55" col="7">
+            <LHS line="55" col="7">
+              <IDENTIFIER line="55" col="7" name="color"/>
+            </LHS>
+            <RHS line="55" col="16">
+              <EXPRESSION line="55" col="16">
+                <IDENTIFIER line="55" col="16" name="clBlue"/>
+              </EXPRESSION>
+            </RHS>
+          </ASSIGN>
+        </WITH>
+      </STATEMENTS>
+      <FINALLY line="57" col="5">
+        <STATEMENTS begin_line="57" begin_col="5" end_line="58" end_col="3">
+          <CALL line="57" col="5">
+            <DOT line="57" col="11">
+              <IDENTIFIER line="57" col="5" name="Panel2"/>
+              <IDENTIFIER line="57" col="12" name="Free"/>
+            </DOT>
+          </CALL>
+        </STATEMENTS>
+      </FINALLY>
+    </TRY>
+    <WITH line="60" col="3">
+      <EXPRESSIONS line="60" col="8">
+        <EXPRESSION line="60" col="8">
+          <CALL line="60" col="8">
+            <DOT line="60" col="14">
+              <IDENTIFIER line="60" col="8" name="TPanel"/>
+              <IDENTIFIER line="60" col="15" name="Create"/>
+            </DOT>
+            <EXPRESSIONS line="60" col="22">
+              <EXPRESSION line="60" col="22">
+                <LITERAL line="60" col="22" type="nil"/>
+              </EXPRESSION>
+            </EXPRESSIONS>
+          </CALL>
+        </EXPRESSION>
+      </EXPRESSIONS>
+      <STATEMENTS begin_line="61" begin_col="3" end_line="64" end_col="6">
+        <ASSIGN line="62" col="5">
+          <LHS line="62" col="5">
+            <IDENTIFIER line="62" col="5" name="color"/>
+          </LHS>
+          <RHS line="62" col="14">
+            <EXPRESSION line="62" col="14">
+              <IDENTIFIER line="62" col="14" name="clGreen"/>
+            </EXPRESSION>
+          </RHS>
+        </ASSIGN>
+        <CALL line="63" col="5">
+          <IDENTIFIER line="63" col="5" name="free"/>
+        </CALL>
+      </STATEMENTS>
+    </WITH>
+  </STATEMENTS>
+</UNIT>

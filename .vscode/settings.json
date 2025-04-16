@@ -1,0 +1,23 @@
+{
+    "delphiLsp.settingsFile": "file:Source/FindPropertyAssignmentsCLI.delphilsp.json",
+    // hide files from explorer view
+    "files.exclude": {
+        "**/*.dcu": true,
+        "**/__history": true,
+        "**/__recovery": true,
+        "**/*.res": true,
+        "**/*.local": true,
+        "**/*.identcache": true,
+        "**/*.delphilsp.json": true,
+    },
+    // hide files from search results
+    "search.exclude": {
+        "**/*.dcu": true,
+        "**/__history": true,
+        "**/__recovery": true,
+        "**/*.res": true,
+        "**/*.local": true,
+        "**/*.identcache": true,
+        "**/*.delphilsp.json": true,
+    },
+}

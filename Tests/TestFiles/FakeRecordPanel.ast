@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<UNIT line="1" col="1" name="FakeRecordPanel">
+  <INTERFACE begin_line="3" begin_col="1" end_line="5" end_col="1"/>
+  <IMPLEMENTATION begin_line="5" begin_col="1" end_line="13" end_col="1">
+    <TYPESECTION line="7" col="1">
+      <TYPEDECL begin_line="8" begin_col="3" end_line="11" end_col="6" name="TPanel">
+        <TYPE line="8" col="12" type="record">
+          <FIELD line="9" col="5">
+            <NAME line="9" col="5" value="Color"/>
+            <TYPE line="9" col="12" name="Integer"/>
+          </FIELD>
+          <FIELD line="10" col="5">
+            <NAME line="10" col="5" value="Other"/>
+            <TYPE line="10" col="12" name="Integer"/>
+          </FIELD>
+        </TYPE>
+      </TYPEDECL>
+    </TYPESECTION>
+  </IMPLEMENTATION>
+  <STATEMENTS begin_line="13" begin_col="1" end_line="18" end_col="4">
+    <VARIABLES line="14" col="3">
+      <VARIABLE line="14" col="7">
+        <NAME line="14" col="7" value="p"/>
+        <TYPE line="14" col="11" name="TPanel"/>
+      </VARIABLE>
+    </VARIABLES>
+    <ASSIGN line="15" col="3">
+      <LHS line="15" col="3">
+        <DOT line="15" col="4">
+          <IDENTIFIER line="15" col="3" name="p"/>
+          <IDENTIFIER line="15" col="5" name="Color"/>
+        </DOT>
+      </LHS>
+      <RHS line="15" col="14">
+        <EXPRESSION line="15" col="14">
+          <LITERAL line="15" col="14" value="1" type="numeric"/>
+        </EXPRESSION>
+      </RHS>
+    </ASSIGN>
+    <ASSIGN line="16" col="3">
+      <LHS line="16" col="3">
+        <DOT line="16" col="4">
+          <IDENTIFIER line="16" col="3" name="p"/>
+          <IDENTIFIER line="16" col="5" name="other"/>
+        </DOT>
+      </LHS>
+      <RHS line="16" col="14">
+        <EXPRESSION line="16" col="14">
+          <LITERAL line="16" col="14" value="2" type="numeric"/>
+        </EXPRESSION>
+      </RHS>
+    </ASSIGN>
+  </STATEMENTS>
+</UNIT>

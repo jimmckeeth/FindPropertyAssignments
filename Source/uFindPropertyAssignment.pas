@@ -16,7 +16,7 @@ type
     TResult = record
       LineNumber: UInt64;
       InstanceName: string;
-      InstanceType: string; // <-- Added
+      InstanceType: string;
       Value: string;
       constructor Create(ALineNumber: UInt64; AInstanceName, AInstanceType, AValue: String);
       function AsString: string;
@@ -271,6 +271,9 @@ begin
         var IdNode := ExprNode.ChildNodes[0];  // Get IDENTIFIER node
         if IdNode.Typ = ntIdentifier then
           Value := IdNode.GetAttribute(anName);
+        if IdNode.Typ = ntLiteral then
+          if IdNode is TValuedSyntaxNode then
+            Value := TValuedSyntaxNode(idNode).Value;
       end;
     end;
 

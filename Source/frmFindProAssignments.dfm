@@ -127,7 +127,7 @@ object Form32: TForm32
         FileMask = '*.pas'
       end>
     Options = [fdoPickFolders, fdoPathMustExist]
-    Left = 648
-    Top = 396
+    Left = 156
+    Top = 174
   end
 end
